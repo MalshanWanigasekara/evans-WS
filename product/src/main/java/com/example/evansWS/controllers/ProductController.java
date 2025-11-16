@@ -1,5 +1,6 @@
 package com.example.evansWS.controllers;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,19 +11,20 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import com.example.evansWS.models.Product;
-import com.example.evansWS.services.ProductService;
+import com.example.evansWS.services.ProductServiceImpl;
 
 @RestController
 @RequestMapping("/product")
 public class ProductController {
     
-    private final ProductService productService;
+    private final ProductServiceImpl productService;
 
-    ProductController(ProductService productService){
+    ProductController(ProductServiceImpl productService){
         this.productService = productService;
     }
 
     @GetMapping
+    @CircuitBreaker(name = "testCB", fallbackMethod = "fallback")
     public List<Product> getAllProducts(){
         return productService.getAllProducts();
 
@@ -37,6 +39,10 @@ public class ProductController {
     public void updateProduct(@PathVariable Long pid, @RequestBody Product updatingProduct){
         productService.updateProduct(pid, updatingProduct);
 
+    }
+
+    public String fallback(Throwable ex) {
+        return "Fallback response due to error.";
     }
     
 }

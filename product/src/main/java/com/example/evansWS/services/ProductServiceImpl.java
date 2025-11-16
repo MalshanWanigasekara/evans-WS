@@ -8,11 +8,11 @@ import com.example.evansWS.Repository.ProductRepository;
 import com.example.evansWS.models.Product;
 
 @Service
-public class ProductService {
+public class ProductServiceImpl implements ProductService {
 
     ProductRepository productRepository;
 
-    ProductService(ProductRepository productRepository){
+    ProductServiceImpl(ProductRepository productRepository){
 
         this.productRepository = productRepository;
 
@@ -30,5 +30,11 @@ public class ProductService {
         product.setProductId(productId);
         productRepository.save(product);
     }
+
+    public void removeProduct(Long productId){
+
+    }
+
+
     
 }

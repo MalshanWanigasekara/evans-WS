@@ -15,6 +15,9 @@ public class Product {
     @Column(name="product_name", nullable = false)
     private String productName;
 
+    @Column(name = "isActive", nullable = false)
+    private boolean isActive = true;
+
     public Long getProductId() {
         return productId;
     }
@@ -31,6 +34,11 @@ public class Product {
         this.productName = productName;
     }
 
-    
-    
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
 }
