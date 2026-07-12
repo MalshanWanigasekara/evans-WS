@@ -1,6 +1,6 @@
-package com.example.evansWS.services;
+package com.example.productservice.services;
 
-import com.example.evansWS.models.Product;
+import com.example.productservice.models.Product;
 
 import java.util.List;
 

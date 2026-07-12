@@ -1,4 +1,4 @@
-package com.example.evansWS.controllers;
+package com.example.productservice.controllers;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
-import com.example.evansWS.models.Product;
-import com.example.evansWS.services.ProductServiceImpl;
+import com.example.productservice.models.Product;
+import com.example.productservice.services.ProductServiceImpl;
 
 @RestController
 @RequestMapping("/product")

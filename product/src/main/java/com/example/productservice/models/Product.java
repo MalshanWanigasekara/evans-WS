@@ -1,4 +1,4 @@
-package com.example.evansWS.models;
+package com.example.productservice.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
