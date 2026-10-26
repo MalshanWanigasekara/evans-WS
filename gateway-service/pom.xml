@@ -3,19 +3,18 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <!--    <parent>-->
-    <!--        <groupId>com.example</groupId>-->
-    <!--        <artifactId>evansWS</artifactId>-->
-    <!--        <version>0.0.1-SNAPSHOT</version>-->
-    <!--    </parent>-->
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.4.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
+    <groupId>com.example</groupId>
     <artifactId>gateway-service</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>gateway-service</name>
+    <description>Web Service for evans</description>
 
     <dependencies>
         <dependency>
